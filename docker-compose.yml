@@ -1,0 +1,30 @@
+
+services:
+  postgres:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: jobs
+      POSTGRES_PASSWORD: jobs
+      POSTGRES_DB: jobs
+    ports:
+      - "5434:5432"
+    volumes:
+      - jobs_db_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    environment:
+      PGADMIN_DEFAULT_EMAIL: jobs@jobs.com
+      PGADMIN_DEFAULT_PASSWORD: jobs
+    ports:
+      - "8080:80"
+    volumes:
+      - jobs_pgadmin_data:/var/lib/pgadmin
+
+volumes:
+  jobs_db_data:
+  jobs_pgadmin_data:
