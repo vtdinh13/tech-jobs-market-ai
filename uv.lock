@@ -1341,23 +1341,23 @@ name = "tech-jobs-market-ai"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
-    { name = "ipykernel" },
     { name = "psycopg" },
 ]
 
 [package.dev-dependencies]
 dev = [
+    { name = "ipykernel" },
     { name = "jupyterlab" },
 ]
 
 [package.metadata]
-requires-dist = [
-    { name = "ipykernel", specifier = ">=7.1.0" },
-    { name = "psycopg", specifier = ">=3.3.2" },
-]
+requires-dist = [{ name = "psycopg", specifier = ">=3.3.2" }]
 
 [package.metadata.requires-dev]
-dev = [{ name = "jupyterlab", specifier = ">=4.5.0" }]
+dev = [
+    { name = "ipykernel", specifier = ">=7.1.0" },
+    { name = "jupyterlab", specifier = ">=4.5.0" },
+]
 
 [[package]]
 name = "terminado"
