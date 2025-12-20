@@ -1,3 +1,4 @@
+
 create_table_sql = """
         CREATE TABLE IF NOT EXISTS adzuna_jobs (
             id BIGSERIAL UNIQUE,
@@ -31,3 +32,4 @@ INSERT INTO adzuna_jobs (
 ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
 ON CONFLICT (job_id) DO NOTHING;
 """
+
