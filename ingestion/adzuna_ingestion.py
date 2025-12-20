@@ -36,7 +36,6 @@ class AdzunaClient:
         }
 
     
-
     def fetch_data(self, job_titles:str, page:int):
         """Call the Adzuna API for a given job title and page."""
 
@@ -109,7 +108,7 @@ class AdzunaClient:
         cutoff = datetime.now(timezone.utc) - timedelta(days=365) 
         total = 0
 
-        for page in range(100, pages+1):
+        for page in range(1, pages+1):
             data = self.fetch_data(job_titles, page)
             if not data:
                 continue

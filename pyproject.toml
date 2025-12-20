@@ -5,7 +5,16 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "pandas>=2.2.3",
+    "matplotlib>=3.10.8",
     "psycopg>=3.3.2",
+    "tiktoken>=0.12.0",
+    "wordcloud>=1.9.4",
+    "toyaikit>=0.0.8",
+    "plotly>=6.5.0",
+    "missingno>=0.5.2",
+    "ydata-profiling>=4.12.2",
+    "pydantic>=2.12.5",
 ]
 
 [dependency-groups]
